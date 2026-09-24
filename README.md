@@ -20,7 +20,7 @@ An image-and-text recognition system using a fine-tuned multimodal model to iden
 `Python` `PyTorch` `LLaVA` `Computer Vision`
 
 <p>
-  <img src="assets/project-8.png" alt="Interactive intelligent history museum system design" width="80%">
+  <img src="assets/project-1.png" alt="Multimodal fake news detection model comparison" width="80%">
 </p>
 
 #### Multimodal Fake News Detection
@@ -32,9 +32,23 @@ Reported F1 scores in the presentation: **0.884 on Weibo** and **0.905 on Twitte
 `Multimodal Learning` `Q-Former` `RAG` `GAT`
 
 <p>
-  <img src="assets/project-10.png" alt="Multimodal fake news detection model comparison" width="49%">
-  <img src="assets/project-9.png" alt="Emotion and semantic fusion model comparison" width="49%">
+  <img src="assets/project-2-1.png" alt="Multimodal fake news detection model comparison" width="80%">
 </p>
+
+<p>
+  <img src="assets/project-2-2.png" alt="Multimodal fake news detection model comparison" width="80%">
+</p>
+
+#### Multimodal Emotion Recognition
+
+A multimodal emotion recognition system using a fine-tuned multimodal model to identify emotions from both text and image data, with a focus on fine-grained visual features and robust predictions.
+
+`Python` `PyTorch` `LLaVA` `Computer Vision`
+
+<p>
+
+
+
 
 #### Interactive Intelligent History Museum
 
@@ -43,8 +57,12 @@ A multimodal, agent-based guide concept for interactive history-museum visits, b
 `LLM` `AI Agent` `Multimodal Interaction`
 
 <p>
-  <img src="assets/project-8.png" alt="Interactive intelligent history museum system design" width="80%">
+  <img src="assets/project-3.png" alt="Interactive intelligent history museum system design" width="80%">
 </p>
+
+
+
+
 
 #### Video Intelligence & Smart Media Tools
 
@@ -53,7 +71,7 @@ Project experience includes video analysis, real-time subtitles, and AI-assisted
 `Video AI` `Speech & Language` `Real-time Systems`
 
 <p>
-  <img src="assets/project-8.png" alt="Interactive intelligent history museum system design" width="80%">
+  <img src="assets/project-4.png" alt="Interactive intelligent history museum system design" width="80%">
 </p>
 
 ---
