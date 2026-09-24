@@ -1,193 +1,172 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="蔡伟斌的个人学术主页：多模态融合、虚假信息检测与微纳智能控制。">
-  <title>蔡伟斌 | Multimodal Intelligence Researcher</title>
+  <meta name="description" content="Weibin Cai's selected AI and multimodal projects.">
+  <title>Weibin Cai | Projects</title>
   <style>
     :root {
-      --ink: #172326;
-      --muted: #6c7a7a;
-      --paper: #f5f4ef;
-      --white: #fffdf8;
-      --line: #d8ddd6;
-      --teal: #0d7375;
-      --teal-dark: #095456;
-      --orange: #dd764c;
-      --yellow: #e7c768;
-      --shadow: 0 18px 50px rgba(31, 52, 47, .08);
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #161b22;
+      --line: #30363d;
+      --text: #e6edf3;
+      --muted: #919ba7;
+      --link: #58a6ff;
+      --green: #3fb950;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", sans-serif;
     }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
-    .topbar {
-      height: 76px; display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid var(--line); font-size: 13px; letter-spacing: .05em;
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .layout {
+      width: min(1050px, calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 34px;
+      padding: 58px 0 70px;
     }
-    .mark { display: flex; gap: 12px; align-items: center; font-weight: 750; }
-    .mark-dot { width: 12px; height: 12px; background: var(--orange); border-radius: 50%; }
-    nav { display: flex; gap: 27px; color: var(--muted); }
-    nav a:hover { color: var(--teal); }
-    .hero {
-      min-height: 640px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px;
-      align-items: center; padding: 82px 0 90px;
+    aside { align-self: start; position: sticky; top: 30px; }
+    .avatar {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 52% 48%, transparent 0 24%, #58a6ff3d 24.3% 24.8%, transparent 25.2%),
+        radial-gradient(circle at 52% 48%, transparent 0 39%, #3fb95038 39.3% 39.8%, transparent 40.2%),
+        linear-gradient(145deg, #18232b, #10151b);
+      color: #8bd5ca;
+      font-size: 42px;
+      font-weight: 750;
+      letter-spacing: 0;
     }
-    .kicker { color: var(--teal); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { font-size: clamp(52px, 8vw, 96px); line-height: .95; letter-spacing: -.07em; margin: 20px 0 26px; max-width: 730px; }
-    .hero h1 span { color: var(--teal); }
-    .intro { color: #52605e; max-width: 590px; font-size: 18px; line-height: 1.8; }
-    .actions { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
-    .button {
-      display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 17px;
-      border: 1px solid var(--ink); font-weight: 700; font-size: 13px; transition: .2s ease;
+    .name { margin: 16px 0 0; font-size: 23px; line-height: 1.3; }
+    .handle { color: var(--muted); }
+    .bio { margin: 18px 0; font-size: 14px; }
+    .profile-link {
+      display: block;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #212830;
+      color: var(--text);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 650;
     }
-    .button.primary { color: var(--white); background: var(--teal-dark); border-color: var(--teal-dark); }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 7px 18px rgba(9, 84, 86, .16); }
-    .hero-visual { position: relative; min-height: 390px; }
-    .orbit { position: absolute; inset: 12px 12px 12px 0; border: 1px solid #bdcbc5; border-radius: 50%; transform: rotate(-18deg); }
-    .orbit:before, .orbit:after { content: ""; position: absolute; border: 1px solid #bdcbc5; border-radius: 50%; inset: 44px 36px; transform: rotate(52deg); }
-    .orbit:after { inset: 94px 77px; transform: rotate(-30deg); }
-    .signal { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 9px rgba(221,118,76,.13); }
-    .signal.one { top: 31px; right: 28px; } .signal.two { left: 27px; bottom: 92px; background: var(--yellow); }
-    .profile {
-      position: absolute; right: 20px; top: 90px; width: 260px; padding: 23px; background: var(--white);
-      border: 1px solid var(--line); box-shadow: var(--shadow);
+    .profile-link:hover { background: #303944; text-decoration: none; }
+    .topics { margin-top: 24px; }
+    .topics h2 { margin: 0 0 8px; font-size: 15px; }
+    .topic { color: var(--muted); font-size: 13px; }
+    main { min-width: 0; }
+    .readme {
+      padding: 28px 30px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--bg);
     }
-    .profile .initials { font-size: 60px; line-height: 1; font-weight: 850; color: var(--teal); letter-spacing: -.09em; }
-    .profile p { margin: 20px 0 0; color: var(--muted); font-size: 13px; }
-    .profile strong { color: var(--ink); }
-    section { padding: 96px 0; border-top: 1px solid var(--line); }
-    .section-head { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 38px; align-items: end; }
-    h2 { font-size: clamp(31px, 4vw, 52px); letter-spacing: -.05em; line-height: 1; margin: 0; }
-    .section-note { color: var(--muted); max-width: 390px; margin: 0; font-size: 14px; }
-    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-    .metric { background: var(--white); padding: 25px; min-height: 140px; }
-    .metric b { display: block; color: var(--teal); font-size: 37px; line-height: 1; letter-spacing: -.05em; }
-    .metric span { display: block; color: var(--muted); font-size: 13px; margin-top: 14px; }
-    .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .research-card { padding: 27px; background: var(--white); border: 1px solid var(--line); min-height: 245px; position: relative; }
-    .research-card:nth-child(2) { border-top: 4px solid var(--orange); }
-    .research-card:nth-child(3) { border-top: 4px solid var(--yellow); }
-    .number { color: var(--orange); font-weight: 800; font-size: 13px; }
-    .research-card h3 { font-size: 21px; line-height: 1.25; margin: 27px 0 12px; letter-spacing: -.03em; }
-    .research-card p { color: var(--muted); font-size: 14px; margin: 0; }
-    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 22px; }
-    .tag { border: 1px solid var(--line); color: var(--teal-dark); font-size: 11px; padding: 4px 8px; }
-    .timeline { position: relative; margin-top: 8px; }
-    .timeline:before { content:""; position: absolute; left: 86px; top: 0; bottom: 0; width: 1px; background: var(--line); }
-    .event { display: grid; grid-template-columns: 70px 1fr; gap: 32px; padding: 21px 0; }
-    .event time { color: var(--orange); font-size: 12px; font-weight: 800; padding-top: 4px; }
-    .event-body { padding-left: 27px; position: relative; }
-    .event-body:before { content:""; position: absolute; left: -5px; top: 8px; width: 9px; height: 9px; background: var(--teal); border: 3px solid var(--paper); outline: 1px solid var(--teal); border-radius: 50%; }
-    .event h3 { margin: 0 0 6px; font-size: 18px; }
-    .event p { margin: 0; color: var(--muted); font-size: 14px; }
-    .plan { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-    .plan-copy { font-size: 19px; line-height: 1.75; color: #52605e; }
-    .plan-list { border-top: 1px solid var(--ink); }
-    .plan-item { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-    .plan-item b { color: var(--orange); font-size: 12px; }
-    .plan-item strong { display: block; margin-bottom: 5px; }
-    .plan-item span { color: var(--muted); font-size: 13px; }
-    footer { padding: 35px 0 50px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; color: var(--muted); font-size: 13px; }
-    @media (max-width: 800px) {
-      .wrap { width: min(100% - 30px, 600px); }
-      nav { display: none; }
-      .hero { grid-template-columns: 1fr; gap: 24px; padding: 60px 0 65px; min-height: 0; }
-      .hero-visual { min-height: 300px; }
-      .profile { right: 5%; top: 65px; }
-      .section-head, footer { display: block; }
-      .section-note { margin-top: 17px; }
-      section { padding: 70px 0; }
-      .metrics, .research-grid, .plan { grid-template-columns: 1fr; }
-      .metric { min-height: 110px; }
-      .timeline:before { left: 58px; }
-      .event { grid-template-columns: 45px 1fr; gap: 25px; }
-      .event-body { padding-left: 23px; }
-      footer > span { display: block; margin-top: 10px; }
+    .repo-label { color: var(--muted); font-size: 12px; }
+    h1 { margin: 9px 0 13px; font-size: 30px; line-height: 1.3; }
+    .intro { margin: 0; }
+    hr { height: 1px; margin: 22px 0; border: 0; background: var(--line); }
+    h2.section-title { margin: 0 0 19px; font-size: 21px; }
+    .project { margin: 0 0 29px; }
+    .project:last-child { margin-bottom: 0; }
+    .project h3 { margin: 0 0 6px; font-size: 17px; }
+    .project p { margin: 0 0 9px; color: #c2cbd4; font-size: 14px; }
+    .tech { color: var(--muted); font-size: 12px; }
+    .project-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 13px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: #fff;
+    }
+    .project-image.chart { width: min(100%, 650px); }
+    .project-image.system { width: min(100%, 650px); }
+    .contact { margin: 22px 0 0; color: var(--muted); font-size: 13px; }
+    footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 720px) {
+      .layout { width: min(100% - 28px, 560px); grid-template-columns: 1fr; gap: 25px; padding-top: 25px; }
+      aside { position: static; display: grid; grid-template-columns: 76px 1fr; column-gap: 16px; align-items: center; }
+      .avatar { width: 76px; grid-row: span 3; font-size: 25px; }
+      .name { margin: 0; font-size: 19px; }
+      .handle { font-size: 13px; }
+      .bio { margin: 3px 0 0; font-size: 13px; }
+      .profile-link, .topics { display: none; }
+      .readme { padding: 21px 18px; }
+      h1 { font-size: 26px; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar wrap">
-    <a class="mark" href="#top"><i class="mark-dot"></i> WEIBIN CAI / RESEARCH</a>
-    <nav aria-label="Primary navigation">
-      <a href="#about">About</a><a href="#research">Research</a><a href="#path">Path</a><a href="#future">PhD Direction</a>
-    </nav>
-  </header>
+  <div class="layout">
+    <aside>
+      <div class="avatar" aria-label="Weibin Cai initials">WC</div>
+      <h2 class="name">Weibin Cai</h2>
+      <div class="handle">Zjomo</div>
+      <p class="bio">Multimodal AI · Trustworthy systems · Agents</p>
+      <a class="profile-link" href="https://github.com/Zjomo" target="_blank" rel="noreferrer">View GitHub profile</a>
+      <div class="topics">
+        <h2>Focus</h2>
+        <div class="topic">Multimodal Learning</div>
+        <div class="topic">Computer Vision</div>
+        <div class="topic">AI Agents</div>
+      </div>
+    </aside>
 
-  <main id="top">
-    <div class="wrap hero" id="about">
-      <div>
-        <div class="kicker">Multimodal intelligence · trustworthy AI</div>
-        <h1>蔡伟斌<br><span>Researching the<br>space between signals.</span></h1>
-        <p class="intro">电子信息与人工智能方向研究者。我的工作连接图像、文本、音频与真实世界系统，关注多模态融合、虚假信息检测，以及面向微纳操控的智能控制。</p>
-        <div class="actions">
-          <a class="button primary" href="#research">Explore research <span>↗</span></a>
-          <a class="button" href="mailto:your-email@example.com">Email me <span>↗</span></a>
-        </div>
-      </div>
-      <div class="hero-visual" aria-label="Abstract diagram representing multimodal signals">
-        <div class="orbit"></div><div class="signal one"></div><div class="signal two"></div>
-        <div class="profile">
-          <div class="initials">WB<br>CAI</div>
-          <p><strong>Based in China</strong><br>Multimodal models · Agents<br>Data-to-decision systems</p>
-        </div>
-      </div>
-    </div>
+    <main>
+      <article class="readme">
+        <div class="repo-label"><a href="https://github.com/Zjomo">Zjomo</a> / README.md</div>
+        <h1>Hi, I'm Weibin 👋</h1>
+        <p class="intro">I build AI projects that connect multimodal data, language models, and practical applications. Here are a few projects and research prototypes I've worked on.</p>
+        <hr>
+        <h2 class="section-title">Selected Projects</h2>
 
-    <section id="research">
-      <div class="wrap">
-        <div class="section-head"><h2>What I work on</h2><p class="section-note">从数据采集与预处理，到模型微调、知识增强与系统落地，持续探索让AI更能理解复杂现实的方法。</p></div>
-        <div class="metrics">
-          <div class="metric"><b>95.4%</b><span>细粒度虫草识别平均准确率</span></div>
-          <div class="metric"><b>0.884</b><span>EQFFG-Trans 在 Weibo 上的 F1</span></div>
-          <div class="metric"><b>&lt; 1s</b><span>端到端多模态识别响应时间</span></div>
-        </div>
-        <div class="research-grid" style="margin-top:18px">
-          <article class="research-card"><div class="number">01 / PERCEPTION</div><h3>多模态细粒度识别</h3><p>基于改进 LLaVA 与跨模态交叉注意力，融合图像纹理、形态与文本语义，用于虫草识别、质检与分级。</p><div class="tag-row"><span class="tag">LLaVA</span><span class="tag">PyTorch</span><span class="tag">Vision-Language</span></div></article>
-          <article class="research-card"><div class="number">02 / TRUST</div><h3>可信的虚假信息检测</h3><p>将 Q-Former、情感语义对齐、门控 RAG 与图注意力结合，提升模型面对语境漂移与证据链缺失时的判断能力。</p><div class="tag-row"><span class="tag">Q-Former</span><span class="tag">RAG</span><span class="tag">GAT</span></div></article>
-          <article class="research-card"><div class="number">03 / CONTROL</div><h3>从感知到微纳执行</h3><p>面向机器人与MEMS场景，关注多模态大模型、强化学习、光镊与微执行器之间的统一数据接口和实时控制。</p><div class="tag-row"><span class="tag">RL</span><span class="tag">MEMS</span><span class="tag">Real-time AI</span></div></article>
-        </div>
-      </div>
-    </section>
+        <section class="project">
+          <h3>Multimodal Cordyceps Recognition</h3>
+          <p>An image-and-text recognition system using a fine-tuned multimodal model to identify Cordyceps, with an emphasis on fine-grained features and robust predictions.</p>
+          <div class="tech">Python · PyTorch · LLaVA · Computer Vision</div>
+        </section>
 
-    <section id="path">
-      <div class="wrap">
-        <div class="section-head"><h2>A path of building</h2><p class="section-note">不仅关心模型在论文里的表现，也关心它能否被部署、验证，并真正解决一个具体问题。</p></div>
-        <div class="timeline">
-          <div class="event"><time>2019—23</time><div class="event-body"><h3>海南科技职业大学 · 大数据技术与应用</h3><p>专业排名前列，获国家励志奖学金；作为队长参与省级、国际级、国家级竞赛并获奖 7 项，获评优秀毕业生。</p></div></div>
-          <div class="event"><time>2023—25</time><div class="event-body"><h3>西京学院 · 电子信息技术</h3><p>硕士阶段持续深耕人工智能与多模态系统，获国家奖学金与学业奖学金；作为队长参与竞赛并获奖 13 项。</p></div></div>
-          <div class="event"><time>NOW</time><div class="event-body"><h3>研究与工程实践</h3><p>参与视频智能分析、实时字幕与智能剪辑、交互式智能校史馆、虫草识别等系统建设，积累论文、专利、软著与技术开发项目经验。</p></div></div>
-        </div>
-      </div>
-    </section>
+        <section class="project">
+          <h3>Multimodal Fake News Detection</h3>
+          <p>Research prototypes combining semantic and emotion features, Q-Former fusion, gated retrieval-augmented generation, and graph attention for misinformation detection.</p>
+          <div class="tech">Multimodal Learning · Q-Former · RAG · GAT</div>
+          <img class="project-image chart" src="assets/project-10.png" alt="Model comparison chart for multimodal fake news detection">
+          <img class="project-image chart" src="assets/project-9.png" alt="Model comparison chart for emotion and semantic fusion">
+        </section>
 
-    <section id="future">
-      <div class="wrap">
-        <div class="section-head"><h2>Next: intelligent<br>micro-worlds</h2><p class="section-note">博士研究规划 · 上海理工大学</p></div>
-        <div class="plan">
-          <p class="plan-copy">在“机器人 + AI”的双轮驱动下，我希望将多模态感知、强化学习与 MEMS 微执行器连接起来，建立面向微纳操控的“感知—认知—决策—执行”闭环。</p>
-          <div class="plan-list">
-            <div class="plan-item"><b>01</b><div><strong>光—机—电统一数据总线</strong><span>连接光阱位置、光功率、MEMS电压与摄像头帧率，形成可被AI理解的中间层。</span></div></div>
-            <div class="plan-item"><b>02</b><div><strong>把微纳操控封装成强化学习环境</strong><span>让模型能够在真实约束下学习策略，并从离线仿真逐步走向实时控制。</span></div></div>
-            <div class="plan-item"><b>03</b><div><strong>领域随机化与元学习</strong><span>应对温度漂移、激光噪声与芯片制造误差，提升策略跨芯片迁移的泛化能力。</span></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="wrap">
-    <span>© 2026 WEIBIN CAI</span>
-    <span>Built for research, designed for connection.</span>
-  </footer>
+        <section class="project">
+          <h3>Interactive Intelligent History Museum</h3>
+          <p>A multimodal, agent-based guide concept for interactive museum visits, bringing conversational guidance together with cultural content.</p>
+          <div class="tech">LLM · AI Agent · Multimodal Interaction</div>
+          <img class="project-image system" src="assets/project-8.png" alt="System design for an interactive intelligent history museum">
+        </section>
+
+        <section class="project">
+          <h3>Video Intelligence & Smart Media Tools</h3>
+          <p>Project experience includes video analysis, real-time subtitles, and AI-assisted video editing for media and monitoring workflows.</p>
+          <div class="tech">Video AI · Speech & Language · Real-time Systems</div>
+        </section>
+
+        <hr>
+        <p class="contact">Thanks for stopping by. Explore my repositories or <a href="https://github.com/Zjomo">reach out on GitHub</a>.</p>
+      </article>
+
+      <footer>© 2026 Weibin Cai · <a href="https://github.com/Zjomo">github.com/Zjomo</a></footer>
+    </main>
+  </div>
 </body>
 </html>
