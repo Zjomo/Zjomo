@@ -19,6 +19,10 @@ An image-and-text recognition system using a fine-tuned multimodal model to iden
 
 `Python` `PyTorch` `LLaVA` `Computer Vision`
 
+<p>
+  <img src="assets/project-8.png" alt="Interactive intelligent history museum system design" width="80%">
+</p>
+
 #### Multimodal Fake News Detection
 
 Research prototypes combining semantic and emotion features, Q-Former fusion, gated retrieval-augmented generation, and graph attention for multimodal misinformation detection.
@@ -47,6 +51,10 @@ A multimodal, agent-based guide concept for interactive history-museum visits, b
 Project experience includes video analysis, real-time subtitles, and AI-assisted video editing for practical media and monitoring workflows.
 
 `Video AI` `Speech & Language` `Real-time Systems`
+
+<p>
+  <img src="assets/project-8.png" alt="Interactive intelligent history museum system design" width="80%">
+</p>
 
 ---
 
