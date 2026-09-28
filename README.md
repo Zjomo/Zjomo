@@ -75,7 +75,7 @@ Project experience includes video analysis, real-time subtitles, and AI-assisted
 
 A C++ edge-box platform that turns RTSP cameras into intelligent monitoring channels — real-time HLS streaming, plugin-style AI detection (fire, smoking, phone use), scheduled analysis, and an alert center with a browser-based management UI.
 
-`Computer Vision``Edge Computing``Real-time Streaming`
+`Computer Vision` `Edge Computing` `Real-time Streaming`
 
 <p align="center">
   <img src="assets/project-5.png" alt="Interactive intelligent history museum system design" width="80%">
