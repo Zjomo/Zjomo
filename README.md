@@ -19,7 +19,7 @@ An image-and-text recognition system using a fine-tuned multimodal model to iden
 
 `Python` `PyTorch` `LLaVA` `Computer Vision`
 
-<p>
+<p align="center">
   <img src="assets/project-1.png" alt="Multimodal fake news detection model comparison" width="80%">
 </p>
 
@@ -31,11 +31,11 @@ Reported F1 scores in the presentation: **0.884 on Weibo** and **0.905 on Twitte
 
 `Multimodal Learning` `Q-Former` `RAG` `GAT`
 
-<p>
+<p align="center">
   <img src="assets/project-2-1.png" alt="Multimodal fake news detection model comparison" width="80%">
 </p>
 
-<p>
+<p align="center">
   <img src="assets/project-2-2.png" alt="Multimodal fake news detection model comparison" width="80%">
 </p>
 
@@ -56,7 +56,7 @@ A multimodal, agent-based guide concept for interactive history-museum visits, b
 
 `LLM` `AI Agent` `Multimodal Interaction`
 
-<p>
+<p align="center">
   <img src="assets/project-3.png" alt="Interactive intelligent history museum system design" width="80%">
 </p>
 
@@ -70,7 +70,7 @@ Project experience includes video analysis, real-time subtitles, and AI-assisted
 
 `Video AI` `Speech & Language` `Real-time Systems`
 
-<p>
+<p align="center">
   <img src="assets/project-4.png" alt="Interactive intelligent history museum system design" width="80%">
 </p>
 
